@@ -23,6 +23,13 @@ class CustomText(models.Model):
 
 class HomePage(models.Model):
     body = models.TextField()
+    tests = models.ForeignKey(
+        "home.CustomText",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="homepage_tests",
+    )
 
     @property
     def api(self):
