@@ -10,9 +10,9 @@ class CustomText(models.Model):
     title = models.CharField(max_length=150,)
     asfd = models.ForeignKey(
         "users.User",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="customtext_asfd",
     )
 
@@ -45,3 +45,8 @@ class HomePage(models.Model):
     @property
     def field(self):
         return "body"
+
+
+class Demo(models.Model):
+    "Generated Model"
+    test = models.BigIntegerField()
